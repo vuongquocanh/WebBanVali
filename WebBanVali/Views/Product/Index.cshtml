@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+@using WebBanVali.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<tDanhMucSP>
+@{
+    int i = 0;
+    foreach (var item in Model)
+    {
+        i++;
+        <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+            <div class="featured__item">
+                <div class="featured__item__pic set-bg" data-setbg=@Url.Content("/images/" + item.Anh)>
+                    <ul class="featured__item__pic__hover">
+                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                </div>
+                <div class="featured__item__text">
+                    <h6><a href="@Url.Action("ProductDetails","Product", new {@productId = item.MaSP})">@item.TenSP</a></h6>
+                    <h5>@item.Gia</h5>
+                </div>
+            </div>
+        </div>
+        if (i % 4 == 0)
+        {
+            <div style="clear:both"></div>
+        }
+    }
+}
+
+Page @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) / @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new {page = page}));

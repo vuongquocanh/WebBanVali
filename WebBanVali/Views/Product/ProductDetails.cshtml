@@ -1,0 +1,297 @@
+﻿@model WebBanVali.Models.tDanhMucSP
+
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<section class="product-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__pic">
+                    <div class="product__details__pic__item">
+                        <img class="product__details__pic__item--large"
+                             src="/images/@Html.DisplayFor(model => model.Anh)" style="height: 550px" alt="">
+                    </div>
+                    <div class="product__details__pic__slider owl-carousel">
+                        <img data-imgbigurl="images/@Html.DisplayFor(model => model.Anh)"
+                             src="../images/@Html.DisplayFor(model => model.Anh)" alt="">
+                        <img data-imgbigurl="images/@Html.DisplayFor(model => model.Anh)"
+                             src="../images/@Html.DisplayFor(model => model.Anh)" alt="">
+                        <img data-imgbigurl="images/@Html.DisplayFor(model => model.Anh)"
+                             src="../images/@Html.DisplayFor(model => model.Anh)" alt="">
+                        <img data-imgbigurl="images/@Html.DisplayFor(model => model.Anh)"
+                             src="../images/@Html.DisplayFor(model => model.Anh)" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__text">
+                    <h3>@Html.DisplayFor(model => model.TenSP)</h3>
+                    <div class="product__details__rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <span>(@Html.DisplayFor(model => model.DoNoi) reviews)</span>
+                    </div>
+                    <div class="product__details__price">@Html.DisplayFor(model => model.Gia)đ</div>
+                    <p>
+                        @Html.DisplayFor(model => model.GioiThieuSP)
+                    </p>
+                    <div class="product__details__quantity">
+                        <div class="quantity">
+                            <div class="pro-qty">
+                                <input type="text" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="primary-btn">ADD TO CARD</a>
+                    <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                    <ul>
+                        <li><b>Màu sắc</b> <span>@Html.DisplayFor(model => model.MauSac)</span></li>
+                        <li><b>Cân nặng</b> <span>@Html.DisplayFor(model => model.CanNang) kg</span></li>
+                        <li><b>Thời gian bảo hành</b> <span>@Html.DisplayFor(model => model.ThoiGianBaoHanh)</span></li>
+                        <li>
+                            <b>Share on</b>
+                            <div class="share">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="product__details__tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                               aria-selected="true">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+                               aria-selected="false">Thông tin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
+                               aria-selected="false">Đánh giá <span>(1)</span></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <div class="product__details__tab__desc">
+                                <h6>Giới thiệu sản phẩm</h6>
+                                <p>
+                                    @Html.DisplayFor(model => model.GioiThieuSP)
+                                </p>
+                                @*<p>
+                                    Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet
+                                    elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
+                                    porta. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus
+                                    nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                                    Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed
+                                    porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum
+                                    sed sit amet dui. Proin eget tortor risus.
+                                </p>*@
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            <div class="product__details__tab__desc">
+                                <h6>Thông tin sản phẩm</h6>
+                                <p>
+                                    @Html.DisplayFor(model => model.GioiThieuSP)
+                                </p>
+                                @*<p>
+                                    Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet
+                                    elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
+                                    porta. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus
+                                    nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                                </p>*@
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabs-3" role="tabpanel">
+                            <div class="product__details__tab__desc">
+                                <h6>Đánh giá sản phẩm</h6>
+                                <p>
+                                    @Html.DisplayFor(model => model.GioiThieuSP)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<div>
+    <h4>tDanhMucSP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NganLapTop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NganLapTop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MauSac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MauSac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanNang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanNang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoNoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoNoi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaDacTinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaDacTinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianBaoHanh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianBaoHanh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GioiThieuSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiThieuSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChietKhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChietKhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh)
+        </dd>*@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.tChatLieu.ChatLieu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tChatLieu.ChatLieu)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tHangSX.HangSX)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tHangSX.HangSX)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tKichThuoc.KichThuoc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tKichThuoc.KichThuoc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tLoaiDT.TenLoai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tLoaiDT.TenLoai)
+            </dd>*@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.tLoaiSP.Loai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tLoaiSP.Loai)
+            </dd>*@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.tQuocGia.TenNuoc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tQuocGia.TenNuoc)
+            </dd>*@
+
+    @*</dl>
+</div>*@
+<p>
+    @Html.ActionLink("Tạo mới", "AddProduct") |
+    @Html.ActionLink("Sửa", "UpdateProduct", new { @productId = Model.MaSP }) |
+    @Html.ActionLink("Xóa", "DeleteProduct", new { @productId = Model.MaSP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
